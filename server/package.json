@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:server": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anu",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.2",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.11",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "react-toastify": "^6.0.8",
+    "socket.io": "^2.3.0"
+  },
+  "proxy": "https://chatvu.herokuapp.com/"
+}
