@@ -25,7 +25,7 @@ app.use(cors());
 // app.use(router);
 
 app.use("/auth", authroutes);
-app.use("/",router);
+app.use("/", router);
 io.on("connect", (socket) => {
   socket.on("join", ({ name, room }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
@@ -73,6 +73,14 @@ io.on("connect", (socket) => {
     }
   });
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "build")));
+
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+  });
+}
 
 server.listen(process.env.NODE_PORT || 5000, () =>
   console.log(`Server has started at ${process.env.NODE_PORT}`)
